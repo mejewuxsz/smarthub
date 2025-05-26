@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #4361ee 0%, #4895ef 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+.auth-container {
+  background: #fff;
+  padding: 2.5rem 2rem 2rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(67, 97, 238, 0.15);
+  width: 100%;
+  max-width: 370px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-container h2 {
+  margin-bottom: 1.5rem;
+  color: #4361ee;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.auth-container form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-container input[type="text"],
+.auth-container input[type="email"],
+.auth-container input[type="password"] {
+  padding: 0.75rem 1rem;
+  border: 1px solid #e0e7ff;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: 'Roboto', Arial, sans-serif;
+  background: #f8f9fa;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.auth-container input:focus {
+  border-color: #4361ee;
+  outline: none;
+  box-shadow: 0 0 0 2px #e0e7ff;
+}
+
+.auth-container button[type="submit"] {
+  background: #4361ee;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.auth-container button[type="submit"]:hover {
+  background: #3f37c9;
+  transform: translateY(-2px) scale(1.02);
+}
+
+.auth-container p {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.98rem;
+  color: #222;
+  text-align: center;
+}
+
+.auth-container a {
+  color: #4361ee;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.auth-container a:hover {
+  color: #3f37c9;
+  text-decoration: underline;
+}
+
+.auth-container .error {
+  color: #f72585 !important;
+  font-size: 0.98rem;
+  margin-top: 0.5rem;
+  text-align: center;
+} 

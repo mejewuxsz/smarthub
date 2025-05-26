@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  # PHP Application Service
+  app:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_USER=smarthub_user
+      - DB_PASSWORD=smarthub_password
+      - DB_NAME=smartstudyhub
+    networks:
+      - smarthub-network
+
+  # MySQL Database Service
+  db:
+    image: mysql:8.0
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_DATABASE=smartstudyhub
+      - MYSQL_USER=smarthub_user
+      - MYSQL_PASSWORD=smarthub_password
+      - MYSQL_ROOT_PASSWORD=root_password
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./sql:/docker-entrypoint-initdb.d
+    networks:
+      - smarthub-network
+
+volumes:
+  mysql_data:
+
+networks:
+  smarthub-network:
+    driver: bridge 
